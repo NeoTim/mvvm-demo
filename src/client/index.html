@@ -25,9 +25,14 @@
   </head>
   <body ng-controller="AppController as app">
 
-    <nav class="top-nav" data-ng-include="'app/core/views/header.view.html'"></nav>
+    <header>
+        <nav class="top-nav white" data-ng-include="'app/core/views/header.view.html'"></nav>
+    </header>
 
-    <ui-view></ui-view>
+    <main ui-view></main>
+
+    <footer class="grey darken-4" data-ng-include="'app/core/views/footer.view.html'"></footer>
+
     <!-- inject-vendor:js -->
     <script src="../../bower_components/angular/angular.js"></script>
     <script src="../../bower_components/jquery/dist/jquery.js"></script>
@@ -47,18 +52,59 @@
     <script src="app/app.module.js"></script>
     <script src="app/core/core.module.js"></script>
     <script src="app/modules/app.modules.module.js"></script>
+    <script src="app/modules/components/components.module.js"></script>
     <script src="app/modules/messages/messages.module.js"></script>
+    <script src="app/core/api/user.api.js"></script>
     <script src="app/core/config/core.constants.js"></script>
     <script src="app/core/config/routes.config.js"></script>
     <script src="app/core/controllers/app.controller.js"></script>
     <script src="app/core/controllers/home.controller.js"></script>
     <script src="app/core/services/storage.service.js"></script>
+    <script src="app/core/directives/mvCollection/mvCollection.directive.js"></script>
+    <script src="app/core/directives/mvCollectionItem/mvCollectionItem.directive.js"></script>
     <script src="app/core/directives/mvVm/mvVm.directive.js"></script>
     <script src="app/core/directives/vmItem/vmItem.directive.js"></script>
+    <script src="app/modules/components/config/components.route.js"></script>
+    <script src="app/modules/components/controllers/components.controller.js"></script>
     <script src="app/modules/messages/api/message.api.service.js"></script>
     <script src="app/modules/messages/config/routes.config.js"></script>
     <script src="app/modules/messages/controllers/messages.controller.js"></script>
     <script src="../../.tmp/templates/templates.js"></script>
     <!-- endinject -->
+    <script>
+
+
+
+
+    (function($){
+        $(document).ready(function(){
+            var $title = $('#title'),
+                $sub   = $('#subtitle');
+                $title2   = $('#title-2');
+                $title3   = $('.title-3');
+
+
+
+
+            var timelime = new TimelineLite()
+
+            timelime
+                .from($title, 1, {autoAlpha:0})
+                .from($sub, 1, {y:'-200px', ease:Elastic.easeOut})
+                .from($title2, 1, {rotationX:'90'})
+                .staggerFrom($title3, 1, {rotation:'180deg', x:'-200%'}, 0.5, 1)
+
+
+        })
+    })(jQuery);
+
+
+
+
+
+
+
+
+    </script>
   </body>
 </html>

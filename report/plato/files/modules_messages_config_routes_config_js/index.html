@@ -106,14 +106,14 @@
                 templateUrl: &#039;app/modules/messages/views/messages.view.html&#039;,
                 controller:  &#039;MessagesController as vm&#039;,
                 resolve:     {
-                    resolvedMessages: resolvedMessages
+                    resolvedUsers: resolvedUsers
                 }
             });
 
         ////////////////////////
 
-        function resolvedMessages (Message) {
-            return Message.all()
+        function resolvedUsers (User) {
+            return User.all()
                 .then(function (response) {
                     return response.data;
                 })

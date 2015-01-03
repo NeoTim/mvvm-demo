@@ -56,8 +56,8 @@
 
 
     "validateJSDoc": {
-        "checkParamNames": true,
-        "requireParamTypes": true
+        "checkParamNames": false,
+        "requireParamTypes": false
     },
 
     "disallowMultipleLineBreaks": true,

@@ -3,7 +3,8 @@
     'use strict';
 
     angular.module('app.modules', [
-      'messages'
+      'messages',
+      'components'
     ]);
 
 }).call(this);

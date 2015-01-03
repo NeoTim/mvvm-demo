@@ -9,6 +9,7 @@
 /////////////////////////////
 ///     Module Dependencies
 var Message  = require('./message');
+var User  = require('./user');
 
 //////////////////////////
 ///
@@ -18,5 +19,6 @@ var Message  = require('./message');
 module.exports = function(app) {
 
     Message.router(app);
+    User.router(app);
 
 };

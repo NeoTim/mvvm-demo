@@ -6,11 +6,9 @@
         .module('messages')
         .controller('MessagesController', MessagesController);
 
-    function MessagesController($scope, resolvedMessages, $storage) {
+    function MessagesController($scope, resolvedUsers, $storage) {
 
-        this.messages = resolvedMessages;
-
-        $storage.sync($scope, 'person');
+        this.users = resolvedUsers;
 
         // $scope.person.name = {};
         // $scope.person.name.first = 'John';

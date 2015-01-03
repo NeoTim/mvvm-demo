@@ -6,13 +6,31 @@ body
   position relative
   min-height 100vh
   min-width 100vw
-  overflow-x hidden
+  overflow hidden
+  flex-container()
+  flex-direction(column)
+
+  & > header
+    flex-element(0 0 64px)
+  & > main
+    overflow-y scroll
+    flex-element(1 0 auto)
+    & > *
+      padding-top 20px
+    & > section
+      padding-top 0
+  & > footer
+    flex-element(1 0 auto)
 
 nav.top-nav
-  margin-bottom 20px
+  position fixed
+  top 0
+  left 0
+  z-index 10
+  // margin-bottom 20px
 
-i
-  font-size 30px
+// i
+//   font-size 30px
 
   .small
     font-size 2rem

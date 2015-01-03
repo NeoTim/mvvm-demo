@@ -15,14 +15,14 @@
                 templateUrl: 'app/modules/messages/views/messages.view.html',
                 controller:  'MessagesController as vm',
                 resolve:     {
-                    resolvedMessages: resolvedMessages
+                    resolvedUsers: resolvedUsers
                 }
             });
 
         ////////////////////////
 
-        function resolvedMessages (Message) {
-            return Message.all()
+        function resolvedUsers (User) {
+            return User.all()
                 .then(function (response) {
                     return response.data;
                 })
