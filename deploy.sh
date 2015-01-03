@@ -78,7 +78,7 @@ selectNodeVersion () {
       NODE_EXE=`cat "$DEPLOYMENT_TEMP/__nodeVersion.tmp"`
       exitWithMessageOnError "getting node version failed"
     fi
-    
+
     if [[ -e "$DEPLOYMENT_TEMP/.tmp" ]]; then
       NPM_JS_PATH=`cat "$DEPLOYMENT_TEMP/__npmVersion.tmp"`
       exitWithMessageOnError "getting npm version failed"
@@ -120,26 +120,26 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
 fi
 
 # 4. Install bower packages
-echo "installing bower packages"
-if [ -e "$DEPLOYMENT_TARGET/bower.json" ]; then
-  cd "$DEPLOYMENT_TARGET"
-  eval $NPM_CMD install bower -g
-  exitWithMessageOnError "installing bower failed"
-  ./node_modules/.bin/bower install
-  exitWithMessageOnError "bower failed"
-  cd - > /dev/null
-fi
+# echo "installing bower packages"
+# if [ -e "$DEPLOYMENT_TARGET/bower.json" ]; then
+#   cd "$DEPLOYMENT_TARGET"
+#   eval $NPM_CMD install bower -g
+#   exitWithMessageOnError "installing bower failed"
+#   ./node_modules/.bin/bower install
+#   exitWithMessageOnError "bower failed"
+#   cd - > /dev/null
+# fi
 
 # 6. Install gulp packages
-echo "installing gulp"
-if [ -e "$DEPLOYMENT_SOURCE/gulpfile.js" ]; then
-  cd "$DEPLOYMENT_TARGET"
-  eval $NPM_CMD install gulp -g
-  exitWithMessageOnError "installing gulp failed"
-  ./node_modules/.bin/gulp --version
-  exitWithMessageOnError "gulp failed"
-  cd - > /dev/null
-fi
+# echo "installing gulp"
+# if [ -e "$DEPLOYMENT_SOURCE/gulpfile.js" ]; then
+#   cd "$DEPLOYMENT_TARGET"
+#   eval $NPM_CMD install gulp -g
+#   exitWithMessageOnError "installing gulp failed"
+#   ./node_modules/.bin/gulp --version
+#   exitWithMessageOnError "gulp failed"
+#   cd - > /dev/null
+# fi
 
 ##################################################################################################################################
 
