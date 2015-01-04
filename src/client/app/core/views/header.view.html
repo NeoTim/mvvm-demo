@@ -1,10 +1,11 @@
 <div class="nav-wrapper">
   <div class="container">
-    <a ui-sref="home" class="brand-logo grey-text">mv<strong class="pink-text text-accent-1">VM</strong></a>
+    <a ui-sref="home" class="brand-logo {{$navbar.logo}}">mv<strong class="pink-text text-accent-1">VM</strong></a>
     <ul id="nav-mobile" class="right side-nav">
-      <li><a class="indigo-text" ui-sref="messages">Collections</a></li>
+      <li><a class="{{$navbar.links}}" ui-sref="generators">Generators</a></li>
+      <li><a class="{{$navbar.links}}" ui-sref="materialize">Materialize</a></li>
       <!-- <li><a class="indigo-text" ui-sref="components">Components</a></li> -->
-      <li><a class="indigo-text" href="">JavaScript</a></li>
+      <!-- <li><a class="{{$navbar.links}}" href="">JavaScript</a></li> -->
     </ul>
   </div>
 </div>

@@ -1,0 +1,42 @@
+<div class="collection-item">
+    <div class="col s1">
+        <span class="collection-item-icon circle blue lighten-2">{{generator.name | limitTo:1}}</span>
+    </div>
+    <div class="col s3">
+        <span>{{generator.name}}</span>
+    </div>
+    <div class="col s7">
+        {{generator.description}}
+    </div>
+    <div class="collection-item-actions">
+        <a class="item-action">
+            <i class="mdi-content-create"></i>
+        </a>
+        <a class="item-action">
+            <i class="mdi-action-schedule"></i>
+        </a>
+        <a class="item-action">
+            <i class="mdi-action-done"></i>
+        </a>
+        <a class="item-action">
+            <i class="mdi-navigation-more-vert"></i>
+        </a>
+    </div>
+    <div data-ng-if="
+            generator.name === 'api'  ||
+            generator.name === 'test' ||
+            generator.name === 'view' ||
+            generator.name === 'styles'
+            "
+         class="collection-item-content" data-ng-include="generator.view"></div>
+    <div data-ng-if="
+            generator.name === 'config'     ||
+            generator.name === 'controller' ||
+            generator.name === 'directive'  ||
+            generator.name === 'service'    ||
+            generator.name === 'factory'    ||
+            generator.name === 'filter'     ||
+            generator.name === 'provider'
+            "
+         class="collection-item-content" data-ng-include="'app/modules/generators/views/template.view.html'"></div>
+</div>

@@ -1,0 +1,32 @@
+<mv-collection class="collection collection-expandable">
+    <mv-collection-item data-ng-repeat="user in vm.users">
+        <div class="col s1">
+            <span class="collection-item-icon circle {{user.color}} lighten-2">{{user.first | limitTo: 1}}</span>
+        </div>
+        <div class="col s4">
+            <span>{{user.first}} {{user.last}}</span>
+        </div>
+        <div class="col s7">
+            {{user.messages[0].title}}
+        </div>
+        <div class="collection-item-actions">
+            <a class="item-action">
+                <i class="mdi-content-create"></i>
+            </a>
+            <a class="item-action">
+                <i class="mdi-action-schedule"></i>
+            </a>
+            <a class="item-action">
+                <i class="mdi-action-done"></i>
+            </a>
+            <a class="item-action">
+                <i class="mdi-navigation-more-vert"></i>
+            </a>
+        </div>
+        <div class="collection-item-content">
+          <h4>{{user.messages[0].title}}</h4>
+          <p class="">{{user.messages[0].text}}</p>
+        </div>
+    </mv-collection-item>
+</mv-collection>
+

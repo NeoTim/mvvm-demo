@@ -11,7 +11,7 @@
     <!-- endinject -->
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="/content/all.min-02251474.css">
+    <link rel="stylesheet" href="/content/all.min-82c27921.css">
     <!-- endinject -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,7 +24,7 @@
   <body ng-controller="AppController as app">
 
     <header>
-        <nav class="top-nav white" data-ng-include="'app/core/views/header.view.html'"></nav>
+        <nav class="top-nav {{$navbar.color}}" data-ng-class="" data-ng-include="'app/core/views/header.view.html'"></nav>
     </header>
 
     <main ui-view></main>
@@ -32,25 +32,23 @@
     <footer class="grey darken-4" data-ng-include="'app/core/views/footer.view.html'"></footer>
 
     <!-- inject-vendor:js -->
-    <script src="/vendor.min-ce33feca.js"></script>
+    <script src="/vendor.min-0a3116dc.js"></script>
     <!-- endinject -->
     <!-- // <script src="bower_components/gsap/src/minified/TimelineLite.min.js"></script> -->
     <!-- inject:js -->
-    <script src="/all.min-87576a39.js"></script>
+    <script src="/all.min-b26f0ddd.js"></script>
     <!-- endinject -->
     <script>
 
 
-
-
     (function($){
         $(document).ready(function(){
+
+
             var $title = $('#title'),
                 $sub   = $('#subtitle');
                 $title2   = $('#title-2');
                 $title3   = $('.title-3');
-
-
 
 
             var timelime = new TimelineLite()
@@ -61,17 +59,8 @@
                 .from($title2, 1, {rotationX:'90'})
                 .staggerFrom($title3, 1, {rotation:'180deg', x:'-200%'}, 0.5, 1)
 
-
         })
     })(jQuery);
-
-
-
-
-
-
-
-
     </script>
   </body>
 </html>

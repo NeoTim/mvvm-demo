@@ -8,7 +8,7 @@
 
     <!-- inject-vendor:css -->
     <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="../../bower_components/materialize/bin/materialize.css">
+    <link rel="stylesheet" href="../../bower_components/materialize/dist/css/materialize.css">
     <link rel="stylesheet" href="../../bower_components/toastr/toastr.css">
     <!-- endinject -->
 
@@ -26,7 +26,7 @@
   <body ng-controller="AppController as app">
 
     <header>
-        <nav class="top-nav white" data-ng-include="'app/core/views/header.view.html'"></nav>
+        <nav class="top-nav {{$navbar.color}}" data-ng-class="" data-ng-include="'app/core/views/header.view.html'"></nav>
     </header>
 
     <main ui-view></main>
@@ -41,7 +41,7 @@
     <script src="../../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../../bower_components/extras.angular.plus/ngplus-overlay.js"></script>
-    <script src="../../bower_components/materialize/bin/materialize.js"></script>
+    <script src="../../bower_components/materialize/dist/js/materialize.js"></script>
     <script src="../../bower_components/gsap/src/uncompressed/TweenMax.js"></script>
     <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../../bower_components/lodash/dist/lodash.compat.js"></script>
@@ -53,37 +53,42 @@
     <script src="app/core/core.module.js"></script>
     <script src="app/modules/app.modules.module.js"></script>
     <script src="app/modules/components/components.module.js"></script>
-    <script src="app/modules/messages/messages.module.js"></script>
+    <script src="app/modules/generators/generators.module.js"></script>
+    <script src="app/modules/materialize/materialize.module.js"></script>
+    <script src="app/core/api/message.api.service.js"></script>
     <script src="app/core/api/user.api.js"></script>
     <script src="app/core/config/core.constants.js"></script>
     <script src="app/core/config/routes.config.js"></script>
     <script src="app/core/controllers/app.controller.js"></script>
     <script src="app/core/controllers/home.controller.js"></script>
     <script src="app/core/services/storage.service.js"></script>
-    <script src="app/core/directives/mvCollection/mvCollection.directive.js"></script>
-    <script src="app/core/directives/mvCollectionItem/mvCollectionItem.directive.js"></script>
     <script src="app/core/directives/mvVm/mvVm.directive.js"></script>
     <script src="app/core/directives/vmItem/vmItem.directive.js"></script>
     <script src="app/modules/components/config/components.route.js"></script>
     <script src="app/modules/components/controllers/components.controller.js"></script>
-    <script src="app/modules/messages/api/message.api.service.js"></script>
-    <script src="app/modules/messages/config/routes.config.js"></script>
-    <script src="app/modules/messages/controllers/messages.controller.js"></script>
+    <script src="app/modules/generators/api/generators.api.js"></script>
+    <script src="app/modules/generators/config/generators.config.js"></script>
+    <script src="app/modules/generators/controllers/generators.controller.js"></script>
+    <script src="app/modules/generators/filters/generators.filter.js"></script>
+    <script src="app/modules/generators/services/generators.service.js"></script>
+    <script src="app/modules/materialize/config/materialize.route.js"></script>
+    <script src="app/modules/materialize/controllers/Materialize.controller.js"></script>
+    <script src="app/modules/generators/directives/mvGenerator/mvGenerator.directive.js"></script>
+    <script src="app/modules/materialize/directives/mvCollection/mvCollection.directive.js"></script>
+    <script src="app/modules/materialize/directives/mvCollectionItem/mvCollectionItem.directive.js"></script>
     <script src="../../.tmp/templates/templates.js"></script>
     <!-- endinject -->
     <script>
 
 
-
-
     (function($){
         $(document).ready(function(){
+
+
             var $title = $('#title'),
                 $sub   = $('#subtitle');
                 $title2   = $('#title-2');
                 $title3   = $('.title-3');
-
-
 
 
             var timelime = new TimelineLite()
@@ -94,17 +99,8 @@
                 .from($title2, 1, {rotationX:'90'})
                 .staggerFrom($title3, 1, {rotation:'180deg', x:'-200%'}, 0.5, 1)
 
-
         })
     })(jQuery);
-
-
-
-
-
-
-
-
     </script>
   </body>
 </html>

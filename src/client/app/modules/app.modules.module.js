@@ -3,8 +3,9 @@
     'use strict';
 
     angular.module('app.modules', [
-      'messages',
-      'components'
+      'materialize',
+      'components',
+      'generators'
     ]);
 
 }).call(this);

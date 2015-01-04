@@ -12,7 +12,12 @@
             .state('components', {
                 url: '/components',
                 templateUrl: 'app/modules/components/views/components.view.html',
-                controller:  'ComponentsController as vm'
+                controller:  'ComponentsController as vm',
+                navbar: {
+                    color:'indigo',
+                    links:'white-text',
+                    logo:'white-text',
+                }
             });
 
         ////////////////////////

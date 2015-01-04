@@ -5,32 +5,51 @@ blockquote
 body
   position relative
   min-height 100vh
+  max-height 100vh
   min-width 100vw
+  max-width 100vw
   overflow hidden
   flex-container()
   flex-direction(column)
-
+  overflow-x hidden
+  scroll-vertical()
   & > header
     flex-element(0 0 64px)
   & > main
-    overflow-y scroll
     flex-element(1 0 auto)
     & > *
       padding-top 20px
     & > section
       padding-top 0
+    & .has-sub-nav
+        padding-top 100px
+
   & > footer
     flex-element(1 0 auto)
 
-nav.top-nav
+nav
+  &.top-nav
+    position fixed
+    top 0
+    left 0
+    z-index 10
+
+.sub-nav
+  padding-top 16px
+  width 100%
+  background none
   position fixed
-  top 0
+  top 64px
+  // height 48px
   left 0
-  z-index 10
+  z-index 9
+  border none
+
+
   // margin-bottom 20px
 
-// i
-//   font-size 30px
+i
+  // font-size 30px
 
   .small
     font-size 2rem
